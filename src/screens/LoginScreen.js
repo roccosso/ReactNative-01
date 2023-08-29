@@ -17,7 +17,7 @@ export default function Login({navigation
 
     const HandleLogin = () =>{
         if (password.toLoweCase() === "Kipling") {
-            navegation.navinate('Home')
+            navegation.navinate('LoginScreen')
         }else{
             alert('La contraseña es incorrecta')
         }
@@ -29,8 +29,8 @@ export default function Login({navigation
             <Image souerce={kipling} style={StyleSheet.image} />
             <View style={{ paddingTop: 50, textAlign: "center"}}>
                 <TextInput placeHolder= "nombre" style={styles.input}></TextInput>
-                <TextInput placeHolder= "contraseña" style={styles.input}></TextInput>
-                <Pressable style={styles.button}>
+                <TextInput placeHolder= "contraseña" style={styles.input} onChangeText={setPassword} name="password"></TextInput>
+                <Pressable style={styles.button} onPress={HandleLogin}>
                     <Text>continuar</Text>
                 </Pressable>
             </View>
