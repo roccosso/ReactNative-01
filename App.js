@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View, TextInput, SafeAreaView, TouchableOpacity } from 'react-native';
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack' 
-import { NavegationContainer } from '@react-navigation/native' 
+import { NavigationContainer } from '@react-navigation/native' 
 import LoginScreen from './src/screens/LoginScreen'
 import Screen1 from './src/screens/Screen1'
 import Screen2 from './src/screens/Screen2'
@@ -16,7 +16,7 @@ export default function App() {
   const Stack = createStackNavigator()
 
   return (
-    <NavegationContainer>
+    <NavigationContainer>
       <Stack.Navigator
         initialRouteName="LoginScreen"
         screenOptions={{
@@ -26,15 +26,14 @@ export default function App() {
         }}>        
         <Stack.Screen
           name="LoginScreen"
-          component={Login}
+          component={LoginScreen}
           options={{title: 'LoginScreen'}}
         />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="Screen1" component={Screen1} />
       <Stack.Screen name="Screen2" component={Screen2} />
       <Stack.Screen name="Screen3" component={Screen3} />
      </Stack.Navigator>
-    </NavegationContainer>
+    </NavigationContainer>
   );
 }
 
