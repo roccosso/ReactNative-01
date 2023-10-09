@@ -12,12 +12,11 @@ export default function Screen3({navigation}) {
   return (
     <View style={[styles.container]}>
       <Text style={[styles.text]}>Screen 3</Text>
-      <BotonReutilizable onPress={handleLogout} titulo='LOGOUT' style={styles.button} />
+      <Boton onPress={handleLogout} titulo='LOGOUT' style={styles.button} />
       <Menu navigation={navigation}/>
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -28,5 +27,12 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white'
-    }
+    },
+    button: {
+      marginTop: 20,
+      width: 300,
+      height: 60,
+      backgroundColor: 'red',
+      borderRadius: 15
+    },
   });

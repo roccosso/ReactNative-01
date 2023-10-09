@@ -1,12 +1,22 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { TouchableOpacity } from 'react-native'
 
-export default function BotonReutilizable({titulo, onPress, style}) {
-    console.log(style)
+export default  BotonReutilizable = ({texto, onPress, style}) => {
+
+  const handleOnPress = () => {
+    const date = new Date();
+    console.log('Fecha y Hora:', date.toUTCString());
+    onPress();
+  }
+  
   return (
-    <View>
-      <TouchableOpacity style={[styles.button, style]} onPress={() => onPress()}><Text style={[styles.textButton]}>{titulo}</Text></TouchableOpacity>
-    </View>
+    
+    <TouchableOpacity 
+        onPress={() => handleOnPress()}
+        style={[styles.button1, style]}>
+        <Text style={[styles.textButton]}>{texto}</Text>
+    </TouchableOpacity>
   )
 }
 

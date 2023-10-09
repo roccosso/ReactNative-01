@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import kipling from "../../assets/kipling.jpg";
 
-export default function Login({ navigation }) {
+export default function LoginSc({ navigation }) {
     
   const [password, setPassword] = useState("");
 
